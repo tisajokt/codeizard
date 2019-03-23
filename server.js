@@ -17,11 +17,16 @@ io.on('connection', (socket) => {
 	socket.on('disconnect', () => console.log('Client disconnected'));
 	socket.on("me", (data) => {
 		if (data == "app") {
+			console.log("is type app socket");
 			app_socket(socket);
 			socket.emit("notif", "Hello");
 		} else if (data == "web") {
+			console.log("is type web socket");
 			web_socket(socket);
 		}
+	});
+	socket.on("msg", (data) => {
+		console.log(data);
 	});
 });
 
