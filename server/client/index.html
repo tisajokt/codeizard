@@ -1,2 +1,21 @@
 
-
+<html>
+	<head>
+		<title>This is a test</title>
+	</head>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+		socket.emit("me", "web");
+		
+		function formSubmit() {
+			console.log("Hello world message sent");
+			socket.emit("notif", "Hello world");
+		};
+	</script>
+	<body>
+		<form onSubmit="formSubmit(); return false">
+			<input name="Submit" type="submit" value="Update" />
+		</form>
+	</body>
+</html>
