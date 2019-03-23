@@ -7,7 +7,7 @@ const path = require("path");
 
 app.use("/", express.static(path.join(__dirname, "client")));
 
-server.listen(80, () => {
+server.listen(8080, () => {
 	console.log("Started server.");
 });
 
