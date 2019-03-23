@@ -4,11 +4,12 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const path = require("path");
+const PORT = process.env.port || 8080;
 
 app.use("/", express.static(path.join(__dirname, "client")));
 
-server.listen(8080, () => {
-	console.log("Started server.");
+server.listen(PORT, () => {
+	console.log(`Started server, listening on port ${PORT}`);
 });
 
 io.on("connection", (socket) => {
