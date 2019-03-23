@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
 		if (data == "app") {
 			console.log("is type app socket");
 			app_socket(socket);
-			socket.emit("notif", "Hello");
+			socket.emit("notif", {notif: "Hello world"});
 		} else if (data == "web") {
 			console.log("is type web socket");
 			web_socket(socket);
